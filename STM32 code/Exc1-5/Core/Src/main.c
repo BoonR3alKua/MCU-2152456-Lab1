@@ -171,41 +171,44 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_GPIO_WritePin(H_RED_GPIO_Port, H_RED_Pin, RESET);
-  HAL_GPIO_WritePin(H_YELLOW_GPIO_Port, H_YELLOW_Pin, SET);
-  HAL_GPIO_WritePin(H_GREEN_GPIO_Port, H_GREEN_Pin, RESET);
-  HAL_GPIO_WritePin(V_RED_GPIO_Port, V_RED_Pin, SET);
-  HAL_GPIO_WritePin(V_YELLOW_GPIO_Port, V_YELLOW_Pin, RESET);
-  HAL_GPIO_WritePin(V_GREEN_GPIO_Port, V_GREEN_Pin, RESET);
-  int counter = 0;
-  while (1)
-  {
-	  if(counter >= 10) counter = 0;
-	  switch (counter) {
-	  case 0:
-		  HAL_GPIO_TogglePin(H_YELLOW_GPIO_Port, H_YELLOW_Pin);
-		  HAL_GPIO_TogglePin(H_RED_GPIO_Port, H_RED_Pin);
-		  HAL_GPIO_TogglePin(V_RED_GPIO_Port, V_RED_Pin);
-		  HAL_GPIO_TogglePin(V_GREEN_GPIO_Port, V_GREEN_Pin);
-		  break;
-	  case 3:
-		  HAL_GPIO_TogglePin(V_GREEN_GPIO_Port, V_GREEN_Pin);
-		  HAL_GPIO_TogglePin(V_YELLOW_GPIO_Port, V_YELLOW_Pin);
-		  break;
-	  case 5:
-		  HAL_GPIO_TogglePin(V_YELLOW_GPIO_Port, V_YELLOW_Pin);
-		  HAL_GPIO_TogglePin(V_RED_GPIO_Port, V_RED_Pin);
-		  HAL_GPIO_TogglePin(H_RED_GPIO_Port, H_RED_Pin);
-		  HAL_GPIO_TogglePin(H_GREEN_GPIO_Port, H_GREEN_Pin);
-		  break;
-	  case 8:
-		  HAL_GPIO_TogglePin(H_GREEN_GPIO_Port, H_GREEN_Pin);
-		  HAL_GPIO_TogglePin(H_YELLOW_GPIO_Port, H_YELLOW_Pin);
-		  break;
-	  default:
-		  break;
-	  }
-	  display7SEG(counter++);
-	  HAL_Delay(1000);
+    HAL_GPIO_WritePin(H_YELLOW_GPIO_Port, H_YELLOW_Pin, SET);
+    HAL_GPIO_WritePin(H_GREEN_GPIO_Port, H_GREEN_Pin, RESET);
+    HAL_GPIO_WritePin(V_RED_GPIO_Port, V_RED_Pin, SET);
+    HAL_GPIO_WritePin(V_YELLOW_GPIO_Port, V_YELLOW_Pin, RESET);
+    HAL_GPIO_WritePin(V_GREEN_GPIO_Port, V_GREEN_Pin, RESET);
+    int counter = 0;
+    while (1)
+    {
+  	  if(counter >= 10) counter = 0;
+  	  switch (counter) {
+  	  case 0:
+  		  HAL_GPIO_TogglePin(H_YELLOW_GPIO_Port, H_YELLOW_Pin);
+  		  HAL_GPIO_TogglePin(H_RED_GPIO_Port, H_RED_Pin);
+  		  HAL_GPIO_TogglePin(V_RED_GPIO_Port, V_RED_Pin);
+  		  HAL_GPIO_TogglePin(V_GREEN_GPIO_Port, V_GREEN_Pin);
+  		  break;
+  	  case 3:
+  		  HAL_GPIO_TogglePin(V_GREEN_GPIO_Port, V_GREEN_Pin);
+  		  HAL_GPIO_TogglePin(V_YELLOW_GPIO_Port, V_YELLOW_Pin);
+  		  break;
+  	  case 5:
+  		  HAL_GPIO_TogglePin(V_YELLOW_GPIO_Port, V_YELLOW_Pin);
+  		  HAL_GPIO_TogglePin(V_RED_GPIO_Port, V_RED_Pin);
+  		  HAL_GPIO_TogglePin(H_RED_GPIO_Port, H_RED_Pin);
+  		  HAL_GPIO_TogglePin(H_GREEN_GPIO_Port, H_GREEN_Pin);
+  		  break;
+  	  case 8:
+  		  HAL_GPIO_TogglePin(H_GREEN_GPIO_Port, H_GREEN_Pin);
+  		  HAL_GPIO_TogglePin(H_YELLOW_GPIO_Port, H_YELLOW_Pin);
+  		  break;
+  	  default:
+  		  break;
+  	  }
+  	  display7SEG(counter++);
+  	  HAL_Delay(1000);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
